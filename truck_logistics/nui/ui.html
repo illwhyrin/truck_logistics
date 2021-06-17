@@ -1,0 +1,868 @@
+<html lang="en" class="">
+	<head>
+		<meta charset="UTF-8">
+		<title>Truck Logistics Converted to QBCore by ViRuS</title>
+		<meta name="robots" content="noindex">
+		<script src="https://kit.fontawesome.com/c906cacafc.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="style.css">
+		
+		<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+		<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+		<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+		<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+			
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	</head>
+
+	<body style="display: none;">
+		<div class="main">
+			<nav class="sidebar-navigation">
+				<ul>
+					<li id="sidebar-1" onclick="openPage(0)">
+						<i class="fas fa-user-circle"></i>
+						<span class="tooltip">Perfil</span>
+					</li>
+					<li onclick="openPage(1)">
+						<i class="fas fa-truck-loading"></i>
+						<span class="tooltip">Trabajos Rapidos</span>
+					</li>
+					<li onclick="openPage(2)">
+						<i class="fas fa-dolly-flatbed"></i>
+						<span class="tooltip">Trabajos de Carga</span>
+					</li>
+					<li onclick="openPage(3)">
+						<i class="fas fa-medal"></i>
+						<span class="tooltip">Skills</span>
+					</li>
+					<li onclick="openPage(4)">
+						<i class="fas fa-wrench"></i>
+						<span class="tooltip">Diagnostico</span>
+					</li>
+					<li onclick="openPage(5)">
+						<i class="fas fa-shopping-cart"></i>
+						<span class="tooltip">Tienda de Camiones</span>
+					</li>
+					<li onclick="openPage(6)">
+						<i class="fa fa-truck"></i>
+						<span class="tooltip">Camiones</span>
+					</li>
+					<li onclick="openPage(7)">
+						<i class="fas fa-user-plus"></i>
+						<span class="tooltip">Reclutar Conductores</span>
+					</li>
+					<li onclick="openPage(8)">
+						<i class="fas fa-users"></i>
+						<span class="tooltip">Conductores</span>
+					</li>
+					<li onclick="openPage(9)">
+						<i class="fas fa-university"></i>
+						<span class="tooltip">Banco</span>
+					</li>
+					<li onclick="closeUI()">
+						<i class="fas fa-times"></i>
+						<span class="tooltip">Cerrar</span>
+					</li>
+				</ul>
+			</nav>
+			<div class="container-pages">
+				<div class="pages main-page">
+					<div class="container-fluid">
+						<section id="minimal-statistics-main">
+							<div class="row">
+								<div class="col-12 mt-3 mb-1">
+									<h4 class="text-uppercase">Estadisticas</h4>
+									<p>Estadísticas de su empresa de camiones</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="card">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-money" class="success">$0.00</h3>
+													<span>Dinero</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-money-check-alt success font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-money-earned" class="success">$0.00</h3>
+													<span>Total de Dinero Ganado</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-money-check success font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-deliveries" class="primary">0</h3>
+													<span>Cargas Terminadas</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-truck-loading primary font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-distance-traveled" class="primary">0km</h3>
+													<span>Distancia Recorrida</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-route primary font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="card">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-exp-1" class="amber accent-4">0</h3>
+													<span>Total EXP Ganada</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-chart-line amber accent-4 font-large-2 float-right"></i>
+												</div>
+											</div>
+											<div id="profile-exp-2" class="progress mt-1 mb-0" style="height: 7px;">
+												<div class="progress-bar bg-amber accent-4" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-skill-points" class="amber accent-4">0</h3>
+													<span>Puntos de Skill</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-medal amber accent-4 font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-trucks" class="info">0</h3>
+													<span>Camiones</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-truck info font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-drivers" class="info">0</h3>
+													<span>Drivers</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-user-friends info font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				
+				<div class="pages job-page">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="col-12 mt-3 mb-1">
+								<h4 class="text-uppercase">Trabajos Rapidos</h4>
+								<p>Aqui no necesitas un camion, nosotros te brindaremos uno</p>
+							</div>
+							<div id="job-page-list" class="mt-3">
+								<ul class="list list-inline">
+									<li class="d-flex justify-content-between">
+										<div class="d-flex flex-row align-items-center"><i class="fa fa-check-circle checkicon"></i>
+											<div class="ml-2">
+												<h6 class="mb-0">Trabajo Inicial</h6>
+												<div class="d-flex flex-row mt-1 text-black-50 date-time">
+													<div><i class="fas fa-route"></i></i><span class="ml-2">Distancia: 22km</span></div>
+													<div class="ml-3"><i class="fas fa-coins"></i></i><span class="ml-2">Ganancia: 6.000</span></div>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex flex-row align-items-center">
+											<button class="btn btn-blue btn-darken-2 white">Comenzar Trabajo</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<i class="fa fa-clock-o"></i><span id="new-contracts-1" class="ml-2">Nuevo contrato en 11h 25m</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="pages freight-page">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="col-12 mt-3 mb-1">
+								<h4 class="text-uppercase">Viajes Elaborados</h4>
+								<p>Gana mas dinero por viajes con tu propio camion</p>
+							</div>
+							<div id="freight-page-list" class="mt-3">
+								<ul class="list list-inline">
+									<li class="d-flex justify-content-between">
+										<div class="d-flex flex-row align-items-center"><i class="fa fa-check-circle checkicon"></i>
+											<div class="ml-2">
+												<h6 class="mb-0">Trabajo Inicial</h6>
+												<div class="d-flex flex-row mt-1 text-black-50 date-time">
+													<div><i class="fas fa-route"></i></i><span class="ml-2">Distancia: 22km</span></div>
+													<div class="ml-3"><i class="fas fa-coins"></i></i><span class="ml-2">Ganancia: 6.000</span></div>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex flex-row align-items-center">
+											<div class="d-flex flex-column mr-2">
+												<div class="profile-image">
+													<div data-tooltip="Explosivos"><img data-toggle="tooltip" title="Hooray!" class="rounded-circle" src="img/explosive-1.png" width="30"></div>
+													<div data-tooltip="Explosivos"><img class="rounded-circle" src="img/flamable-2.png" width="30"></div>
+													<div data-tooltip="Explosivos"><img class="rounded-circle" src="img/flamable-3.png" width="30"></div>
+													<div data-tooltip="Explosivos"><img class="rounded-circle" src="img/flamable-4.png" width="30"></div>
+													<div data-tooltip="Explosivos"><img class="rounded-circle" src="img/toxic-6.png" width="30"></div>
+													<div data-tooltip="Explosivos"><img class="rounded-circle" src="img/corrosive-8.png" width="30"></div>
+													<div data-tooltip="Explosivos"><img class="rounded-circle" src="img/fragile.png" width="30"></div>
+													<div data-tooltip="Explosivos"><img class="rounded-circle" src="img/valuable.png" width="30"></div>
+												</div>
+											</div>
+											<button onclick="startJob()" class="btn btn-blue btn-darken-2 white">Comenzar Trabajo</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<i class="fa fa-clock-o"></i><span id="new-contracts-2" class="ml-2">Nuevo contrato en 11h 25m</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pages skills-page">
+					<div class="col-12 mt-3 mb-1">
+						<h4 class="text-uppercase">Habilidades</h4>
+						<p id="skills-desc">Sube tus Habilidades trabajando (Puntos de Habilidad Disponibles: 0)</p>
+					</div>
+					<div class="container-progresses">
+						<div>
+							<h3>Tipo de Producto</h1>
+						</div>
+						<div id="product_type" class="progresses">
+							<div class="redsteps" onclick="setSkill('product_type',1)"> <span class="font-weight-bold">1</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('product_type',2)"> <span class="font-weight-bold">2</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('product_type',3)"> <span class="font-weight-bold">3</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('product_type',4)"> <span class="font-weight-bold">4</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('product_type',5)"> <span class="font-weight-bold">5</span> </div>
+						</div>
+						<div class="skill-description">
+							<button type="button" class="collapsible">Description</button>
+							<div class="content">
+								<p>El transporte de mercancías peligrosas requiere profesionales bien capacitados. Adquirir certificados ADR para liberar nuevos tipos de carga..</p>
+								<ul>
+									Clase 1 - Explosivos:
+									<li>Lleva montones de dinamita, fuegos artificiales y munición.</li>
+									<BR> Clase 2 - Gases:
+									<li> Lleva cargas de gases inflamables, no inflamables y venenosos. </li>
+									<BR> Clase 3 - Liquidos Peligrosos:
+									<li> Lleva cargas de combustibles peligrosos como gasolina, diesel y queroseno </li>
+									<BR> Class 4 - Flammable solids:
+									<li> Release loads of nitrocellulose, megnium, safety matches, spontaneous combustion aluminum, white phosphorus, among others </li>
+									<BR> Class 6 - Toxic Substances
+									<li> Release loads of poisons, potassium chloride, mercury cyanide and pesticides </li>
+									<BR> Class 8 - Corrosive substances
+									<li> Release loads of substances that can dissolve organic tissue or severely corrode certain metals. As sulfuric acid, hydrochloric acid, potassium hydroxide and sodium hydroxide </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="container-progresses">
+						<div>
+							<h3>Distancia</h1>
+						</div>
+						<div id="Distancia" class="progresses">
+							<div class="redsteps" onclick="setSkill('Distancia',1)"> <span class="font-weight-bold">1</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('Distancia',2)"> <span class="font-weight-bold">2</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('Distancia',3)"> <span class="font-weight-bold">3</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('Distancia',4)"> <span class="font-weight-bold">4</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('Distancia',5)"> <span class="font-weight-bold">5</span> </div>
+						</div>
+						<div class="skill-description">
+							<button type="button" class="collapsible">Description</button>
+							<div class="content">
+								<p> Your long Distancia skill determines the maximum Distancia you can travel on duty. Initially they are not offered to drive more than 6km. </p>
+								<ul>
+									Level 1:
+									<li> Deliveries up to 6.5km </li>
+									<li> 5% Ganancia for Distancias greater than 6km </li>
+									<li> 10% experience bonus for Distancias greater than 6km </li>
+									<BR> Level 2:
+									<li> Deliveries up to 7km </li>
+									<li> 10% Ganancia for Distancias greater than 6.5km </li>
+									<BR> Level 3:
+									<li> Deliveries up to 7.5km </li>
+									<li> 15% Ganancia for Distancias greater than 7km </li>
+									<BR> Level 4:
+									<li> Deliveries up to 8km </li>
+									<li> 20% Ganancia for Distancias greater than 7.5km </li>
+									<BR> Level 5:
+									<li> Deliveries up to 8.5km </li>
+									<li> 25% Ganancia for Distancias greater than 8km </li>
+									<BR> Level 6:
+									<li> Deliveries anywhere </li>
+									<li> 30% Ganancia for Distancias greater than 8.5km </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="container-progresses">
+						<div>
+							<h3>Valuable Cargo</h1>
+						</div>
+						<div id="valuable" class="progresses">
+							<div class="redsteps" onclick="setSkill('valuable',1)"> <span class="font-weight-bold">1</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('valuable',2)"> <span class="font-weight-bold">2</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('valuable',3)"> <span class="font-weight-bold">3</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('valuable',4)"> <span class="font-weight-bold">4</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('valuable',5)"> <span class="font-weight-bold">5</span> </div>
+						</div>
+						<div class="skill-description">
+							<button type="button" class="collapsible">Description</button>
+							<div class="content">
+								<p> Every cargo is valuable, but some are more valuable than others. Companies rely only on proven specialists to perform this type of service. </p>
+								<ul>
+									Level 1:
+									<li> High value unlocked job offers </li>
+									<li> 5% Ganancia for valuable deliveries </li>
+									<li> 20% experience bonus for valuable deliveries </li>
+									<BR> Level 2:
+									<li> 10% Ganancia for valuable deliveries </li>
+									<BR> Level 3:
+									<li> 15% Ganancia for valuable deliveries </li>
+									<BR> Level 4:
+									<li> 20% Ganancia for valuable deliveries </li>
+									<BR> Level 5:
+									<li> 25% Ganancia for valuable deliveries </li>
+									<BR> Level 6:
+									<li> 30% Ganancia for valuable deliveries </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="container-progresses">
+						<div>
+							<h3>Fragile Cargo</h1>
+						</div>
+						<div id="fragile" class="progresses">
+							<div class="redsteps" onclick="setSkill('fragile',1)"> <span class="font-weight-bold">1</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('fragile',2)"> <span class="font-weight-bold">2</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('fragile',3)"> <span class="font-weight-bold">3</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('fragile',4)"> <span class="font-weight-bold">4</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('fragile',5)"> <span class="font-weight-bold">5</span> </div>
+						</div>
+						<div class="skill-description">
+							<button type="button" class="collapsible">Description</button>
+							<div class="content">
+								<p> This ability allows you to transport fragile loads, such as glass, electronics or delicate machines. </p>
+								<ul>
+									Level 1:
+									<li> Fragile cargo job offers unlocked </li>
+									<li> 5% Ganancia for fragile cargo deliveries </li>
+									<li> 20% experience bonus for fragile cargo deliveries </li>
+									<BR> Level 2:
+									<li> 10% Ganancia for delivery of fragile cargo </li>
+									<BR> Level 3:
+									<li> 15% Ganancia for deliveries of fragile cargo </li>
+									<BR> Level 4:
+									<li> 20% Ganancia for delivery of fragile cargo </li>
+									<BR> Level 5:
+									<li> 25% Ganancia for delivery of fragile cargo </li>
+									<BR> Level 6:
+									<li> 30% Ganancia for fragile cargo deliveries </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="container-progresses">
+						<div>
+							<h3>On-time delivery</h1>
+						</div>
+						<div id="fast" class="progresses">
+							<div class="redsteps" onclick="setSkill('fast',1)"> <span class="font-weight-bold">1</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('fast',2)"> <span class="font-weight-bold">2</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('fast',3)"> <span class="font-weight-bold">3</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('fast',4)"> <span class="font-weight-bold">4</span> </div> <span class="redline"></span>
+							<div class="redsteps" onclick="setSkill('fast',5)"> <span class="font-weight-bold">5</span> </div>
+						</div>
+						<div class="skill-description">
+							<button type="button" class="collapsible">Description</button>
+							<div class="content">
+								<p> Sometimes, companies need to deliver something quickly. These jobs put more pressure on the driver, the delivery time is short but the payment makes up for the discomfort. </p>
+								<ul>
+									Level 1:
+									<li> Urgent cargo job offers </li>
+									<li> 5% Ganancia for urgent cargo deliveries </li>
+									<li> 20% experience bonus for urgent cargo deliveries </li>
+									<BR> Level 2:
+									<li> 10% Ganancia for urgent cargo deliveries </li>
+									<BR> Level 3:
+									<li> 15% Ganancia for urgent cargo deliveries </li>
+									<BR> Level 4:
+									<li> 20% Ganancia for urgent cargo deliveries </li>
+									<BR> Level 5:
+									<li> 25% Ganancia for urgent cargo deliveries </li>
+									<BR> Level 6:
+									<li> 30% Ganancia for urgent cargo deliveries </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pages diagnostic-page">
+					<div class="col-12 mt-3 mb-1">
+						<h4 class="text-uppercase">Diagnostic <small id="truck-name">(Scania)</small></h4>
+						<p>Fix your truck to do jobs (change your truck by clicking on select button on Trucks page)</p>
+					</div>
+					<div class="d-flex justify-content-center align-items-center">
+						<div>
+							<div class="card mr-0">
+								<div onclick="repairTruck('body')" class="card-content">
+									<div id="diagnostic-body" class="card-body">
+										<div class="media d-flex">
+											<div class="media-body text-left">
+												<h3 class="success">100 %</h3>
+												<span>Fix Body</span>
+											</div>
+											<div class="align-self-center">
+												<i class="fas fa-tools success font-large-2 float-right"></i>
+											</div>
+										</div>
+										<div class="progress mt-1 mb-0" style="height: 7px;">
+											<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card mr-0">
+								<div onclick="repairTruck('engine')" class="card-content">
+									<div id="diagnostic-engine" class="card-body">
+										<div class="media d-flex">
+											<div class="media-body text-left">
+												<h3 class="success">100 %</h3>
+												<span>Fix Engine</span>
+											</div>
+											<div class="align-self-center">
+												<i class="fas fa-tools success font-large-2 float-right"></i>
+											</div>
+										</div>
+										<div class="progress mt-1 mb-0" style="height: 7px;">
+											<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card mr-0">
+								<div onclick="repairTruck('transmission')" class="card-content">
+									<div id="diagnostic-transmission" class="card-body">
+										<div class="media d-flex">
+											<div class="media-body text-left">
+												<h3 class="success">100 %</h3>
+												<span>Fix Transmission</span>
+											</div>
+											<div class="align-self-center">
+												<i class="fas fa-tools success font-large-2 float-right"></i>
+											</div>
+										</div>
+										<div class="progress mt-1 mb-0" style="height: 7px;">
+											<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="card mr-0">
+								<div onclick="repairTruck('wheels')" class="card-content">
+									<div id="diagnostic-wheels" class="card-body">
+										<div class="media d-flex">
+											<div class="media-body text-left">
+												<h3 class="success">100 %</h3>
+												<span>Fix Wheels</span>
+											</div>
+											<div class="align-self-center">
+												<i class="fas fa-tools success font-large-2 float-right"></i>
+											</div>
+										</div>
+										<div class="progress mt-1 mb-0" style="height: 7px;">
+											<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="truck-img">
+							<img src="img/truck.png" alt="Truck">
+						</div>
+					</div>
+				</div>
+				<div class="pages dealership-page">
+					<div class="container-fluid d-flex justify-content-center">
+						<div id="dealership-page-list" class="row">
+							<div class="col-12 mt-3 mb-1">
+								<h4 class="text-uppercase">Dealership</h4>
+								<p>Buy more trucks to you and your drivers</p>
+							</div>
+							<div class="card"> <img src="img/truck1.jpg" class="card-img-top" width="100%">
+								<div class="card-body pt-0 px-0">
+									<div class="d-flex flex-row justify-content-between mb-0 mt-3 px-3"> <span class="text-muted">Truck</span>
+										<h6>Scania</h6>
+									</div>
+									<hr class="mt-2 mx-3">
+									<div class="d-flex flex-row justify-content-between px-3 pb-4">
+										<div class="d-flex flex-column"><span class="text-muted">Price</span></div>
+										<div class="d-flex flex-column">
+											<h5 class="mb-0">&dollar;22,495</h5>
+										</div>
+									</div>
+									<div class="d-flex flex-row justify-content-between p-3 mid">
+										<div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+											<div class="d-flex flex-row"><img src="img/engine_icon.jpg" width="35px" height="25px">
+												<div class="d-flex flex-column ml-1"><small class="ghj">1.4L MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+											</div>
+										</div>
+										<div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+											<div class="d-flex flex-row"><img src="img/power_icon.jpg">
+												<h6 class="ml-1">135 hp</h6>
+											</div>
+										</div>
+									</div>
+									<div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-blue btn-darken-2 white btn-block"><small>BUY</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pages trucks-page">
+					<div class="col-12 mt-3 mb-1">
+						<h4 class="text-uppercase">Trucks</h4>
+						<p>See all your trucks here. You can setup a driver for each one</p>
+					</div>
+					<ul id="trucks-page-list" class="list list-inline">
+						<li class="d-flex justify-content-between">
+							<div class="d-flex flex-row align-items-center"><i class="fa fa-check-circle checkicon"></i>
+								<div class="ml-2">
+									<h6 class="mb-0">Trabajo Inicial</h6>
+									<div class="d-flex flex-row mt-1 text-black-50 date-time">
+										<div><i class="fas fa-route"></i></i><span class="ml-2">Distancia: 22km</span></div>
+										<div class="ml-3"><i class="fas fa-coins"></i></i><span class="ml-2">Ganancia: 6.000</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex flex-row align-items-center">
+								<div class="d-flex flex-column mr-2">
+									<select class="selectpicker form-control">
+										<option selected="selected">Select Driver</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</div> 
+								<button class="btn btn-red btn-accent-4 white">Sell Truck</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="pages recruitment-page">
+					<div class="container-fluid d-flex justify-content-center">
+						<div id="recruitment-page-list" class="row">
+							<div class="col-12 mt-3 mb-1">
+								<h4 class="text-uppercase">Recruitment Agency</h4>
+								<p>Recruit new drivers to work for your company</p>
+							</div>
+							<div class="card user-card">
+								<div class="card-block">
+									<div class="user-image">
+										<img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="img-radius" alt="User-Profile-Image">
+									</div>
+									<h6 class="m-t-25 m-b-10">Alessa Robert</h6>
+									<p class="text-muted">Price: $500 + 5$/km</p>
+									<hr>
+									<p class="text-muted">Product Type</p>
+									<ul class="list-unstyled activity-leval">
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<p class="text-muted">Distancia</p>
+									<ul class="list-unstyled activity-leval">
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<p class="text-muted">Valuable Cargo</p>
+									<ul class="list-unstyled activity-leval">
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<p class="text-muted">Fragile Cargo</p>
+									<ul class="list-unstyled activity-leval">
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<p class="text-muted">On-time delivery</p>
+									<ul class="list-unstyled activity-leval">
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li class="actived"></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-blue btn-darken-2 white btn-block"><small>HIRE</small></button></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pages drivers-page">
+					<div class="col-12 mt-3 mb-1">
+						<h4 class="text-uppercase">Drivers</h4>
+						<p>See all your drivers here. You can setup a truck for each one</p>
+					</div>
+					<ul id="drivers-page-list" class="list list-inline">
+						<li class="d-flex justify-content-between">
+							<div class="d-flex flex-row align-items-center"><i class="fa fa-check-circle checkicon"></i>
+								<div class="ml-2">
+									<h6 class="mb-0">Trabajo Inicial</h6>
+									<div class="d-flex flex-row mt-1 text-black-50 date-time">
+										<div><i class="fas fa-route"></i></i><span class="ml-2">Distancia: 22km</span></div>
+										<div class="ml-3"><i class="fas fa-coins"></i></i><span class="ml-2">Ganancia: 6.000</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex flex-row align-items-center">
+								<div class="d-flex flex-column mr-2">
+									<select class="selectpicker form-control">
+										<option selected="selected">Select Truck</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</div> 
+								<button class="btn btn-red btn-accent-4 white">Fire Driver</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="pages bank-page">
+					<div class="container-fluid">
+						<section id="minimal-statistics-bank">
+							<div class="row">
+								<div class="col-12 mt-3 mb-1">
+									<h4 class="text-uppercase">Bank</h4>
+									<p id="loan-title">Make loans to invest in your company (Maximum loan: $500.000)</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="card">
+									<div onclick="loan(1)" class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div id="loan-1" class="media-body text-left">
+													<h3 class="success darken-1">$400.000</h3>
+													<span>pay $4.000 at day</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-coins success darken-1 font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div onclick="loan(2)" class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div id="loan-2" class="media-body text-left">
+													<h3 class="success darken-1">$100.000</h3>
+													<span>pay $1.000 at day</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-coins success darken-1 font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div onclick="loan(3)" class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div id="loan-3" class="media-body text-left">
+													<h3 class="success darken-1">$50.000</h3>
+													<span>pay $500 at day</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-coins success darken-1 font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div onclick="loan(4)" class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div id="loan-4" class="media-body text-left">
+													<h3 class="success darken-1">$20.000</h3>
+													<span>pay $200 at day</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-coins success darken-1 font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section id="minimal-statistics-bank-2">
+							<div class="row">
+								<div class="card width-600">
+									<div onclick="withdrawMoney()" class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="bank-money" class="success darken-1">$400.000</h3>
+													<span>Withdraw your money</span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-coins success darken-1 font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="card width-600">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<input id="input-deposit-money" class="deposit-money" type="number" placeholder="Amount">
+													<button onclick="depositMoney()" class="btn btn-blue btn-darken-2 white deposit-money-btn">Deposit Money</button>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-coins success darken-1 font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-12 mb-1">
+						<p>Active loans:</p>
+					</div>
+					<ul id="loan-list" class="list list-inline">
+						<li class="d-flex justify-content-between">
+							<div class="d-flex flex-row align-items-center"><i class="fa fa-check-circle checkicon"></i>
+								<div class="ml-2">
+									<h6 class="mb-0">Trabajo Inicial</h6>
+									<div class="d-flex flex-row mt-1 text-black-50 date-time">
+										<div><i class="fas fa-route"></i></i><span class="ml-2">Distancia: 22km</span></div>
+										<div class="ml-3"><i class="fas fa-coins"></i></i><span class="ml-2">Ganancia: 6.000</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex flex-row align-items-center">
+								<button class="btn btn-red btn-accent-4 white">Pay Loan</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="myModal" class="modal fade" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog modal-confirm">
+				<div class="modal-content">
+					<div class="modal-header flex-column">
+						<div class="icon-box">
+							<i class="fas fa-exclamation"></i>
+						</div>						
+						<h4 class="modal-title w-100">Are you sure?</h4>	
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<p>Do you really want to delete these records? This process cannot be undone.</p>
+					</div>
+					<div class="modal-footer justify-content-center">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-danger">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div> 
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="panel.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,908 @@
+body {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	overflow: hidden;
+	background-color: #0000006e !important;
+}
+
+.main {
+	width: 1280px;
+	height: 726px;
+	background-color: #f5f6f8;
+	border-radius: 0px 20px 20px 0px;
+	display: grid;
+    grid-template-columns: 80px 1200px;
+}
+
+/*===========================*/
+/*========= SIDEBAR =========*/
+/*===========================*/
+
+.sidebar-navigation {
+	display: inline-block;
+	height: 100%;
+	width: 80px;
+	background-color: #313443;
+}
+
+.sidebar-navigation ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: "Lato", sans-serif;
+	line-height: 1;
+	text-align: center;
+	color: white;
+	height: 100%;
+}
+
+.sidebar-navigation ul li {
+	padding: 20px 0;
+	cursor: pointer;
+	transition: all ease-out 120ms;
+    max-height: 66px;
+}
+
+.sidebar-navigation ul li i {
+	display: block;
+	font-size: 24px;
+	transition: all ease 450ms;
+	width: 100%;
+}
+
+.sidebar-navigation ul li .tooltip {
+	display: inline-block;
+	position: relative;
+	background-color: #313443;
+	padding: 8px 15px;
+	border-radius: 3px;
+	margin-top: -26px;
+	left: 90px;
+	opacity: 0;
+	visibility: hidden;
+	font-size: 12px;
+	letter-spacing: 0.5px;
+	width: 100px;
+}
+
+.sidebar-navigation ul li .tooltip:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: -4px;
+	top: 10px;
+	transform: rotate(45deg);
+	width: 10px;
+	height: 10px;
+	background-color: inherit;
+}
+
+.sidebar-navigation ul li:hover {
+	background-color: #22252e;
+}
+
+.sidebar-navigation ul li:hover .tooltip {
+	visibility: visible;
+	opacity: 1;
+	transition: all ease 450ms;
+}
+
+.sidebar-navigation ul li.active {
+	background-color: #22252e;
+}
+
+.sidebar-navigation ul li.active i {
+	color: #98d7ec;
+}
+
+/*=========================*/
+/*========= SKILL =========*/
+/*=========================*/
+
+.skills-page {
+	overflow: auto;
+}
+
+.container-progresses{
+    padding: 10px;
+    border: 1px solid #e3dada;
+    margin-top: 12px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.progresses {
+    display: flex;
+	align-items: center;
+	margin: 15px;
+}
+
+.line {
+    width: 120px;
+    height: 6px;
+    background: #63d19e
+}
+.redline {
+    width: 120px;
+    height: 6px;
+    background: #d16363
+}
+
+.steps {
+    display: flex;
+    background-color: #63d19e;
+    color: #fff;
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%
+}
+
+.redsteps {
+    display: flex;
+    background-color: #d16363;
+    color: #fff;
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%
+}
+
+.redsteps:hover {
+    background-color: #a32d2d;
+    cursor: pointer;
+}
+
+.skill-description {
+	font-size: 13px;
+}
+
+.collapsible {
+	background-color: #ebebeb;
+	color: #000000;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+.active, .collapsible:hover {
+	background-color: #b9b9b9;
+}
+
+.content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+	font-size: 13px;
+}
+
+.accordion_two_section {
+    background: #f7f7f7
+}
+
+.ptb-100 {
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+.accordionTwo .panel-group {
+    margin-bottom: 0
+}
+
+.accordionTwo .panel {
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 10px solid transparent;
+    border-radius: 0;
+    margin: 0
+}
+
+.accordionTwo .panel-default {
+    border: 0
+}
+
+.accordionTwo .panel-default>.panel-heading {
+    background: #4385f5;
+    border-radius: 0px;
+    border-color: #4385f5
+}
+
+.accordion-wrap .panel-heading {
+    padding: 0px;
+    border-radius: 0px
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit
+}
+
+.accordionTwo .panel .panel-heading a.collapsed {
+    color: #999999;
+    background-color: #fff;
+    display: block;
+    padding: 12px 20px
+}
+
+.accordionTwo .panel .panel-heading a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff
+}
+
+.accordion-wrap .panel .panel-heading a {
+    font-size: 14px
+}
+
+.accordionTwo .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top: 0;
+    padding-top: 0;
+    padding: 20px 20px 20px 30px;
+    background: #4385f5;
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px
+}
+
+.accordionTwo .panel .panel-heading a:after {
+    content: "\2212";
+    color: #4285f4;
+    background: #fff
+}
+
+.accordionTwo .panel .panel-heading a:after,
+.accordionTwo .panel .panel-heading a.collapsed:after {
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    float: right;
+    width: 21px;
+    display: block;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    border-radius: 50%;
+    color: #FFF
+}
+
+.accordionTwo .panel .panel-heading a.collapsed:after {
+    content: "\2b";
+    color: #fff;
+    background-color: #DADADA
+}
+
+.accordionTwo .panel .panel-heading a:after {
+    content: "\2212";
+    color: #4285f4;
+    background: #dadada
+}
+
+a:link {
+    text-decoration: none
+}
+
+/*=========================*/
+/*========= PAGES =========*/
+/*=========================*/
+
+.container-pages {
+	height: 726px;
+}
+
+.pages {
+	display: none;
+	padding: 20px;
+	height: 100%;
+}
+
+.main-page {
+	display: block;
+}
+
+.bronze {
+	color: #9e5a00;
+}
+
+/*========================*/
+/*========= JOBS =========*/
+/*========================*/
+
+.main-page {
+    overflow: auto;
+}
+.job-page {
+    overflow: auto;
+}
+.freight-page {
+    overflow: auto;
+}
+.drivers-page {
+    overflow: auto;
+}
+.trucks-page {
+    overflow: auto;
+}
+
+.icons i {
+    color: #b5b3b3;
+    border: 1px solid #b5b3b3;
+    padding: 6px;
+    margin-left: 4px;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.activity-done {
+    font-weight: 600
+}
+
+.list-group li {
+    margin-bottom: 12px
+}
+
+.list li {
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #e3dada;
+    margin-top: 12px;
+    border-radius: 5px;
+    background: #fff
+}
+
+.checkicon {
+    color: green;
+    font-size: 19px
+}
+
+.date-time {
+    font-size: 12px
+}
+
+.profile-image {
+	display: flex;
+}
+
+.profile-image div img {
+	margin-left: 3px;
+}
+
+.tooltip_icon {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip_icon .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	top: 150%;
+	left: 50%;
+	margin-left: -60px;
+	opacity: 0;
+	font-size: 12px;
+}
+
+.tooltip_icon .tooltiptext::after {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent black transparent;
+}
+
+.tooltip_icon:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 450ms;
+}
+
+/*==============================*/
+/*========= DIAGNOSTIC =========*/
+/*==============================*/
+
+.diagnostic-page {
+	display: none;
+	max-width: 1200px;
+}
+
+.diagnostic-page .card-content:hover{
+    background-color: #dfdfdf;
+    cursor: pointer;
+}
+
+/*==========================*/
+/*========= DEALER =========*/
+/*==========================*/
+
+.dealership-page {
+	overflow: auto;
+}
+
+.card {
+    width: 280px;
+	border-radius: 10px;
+	margin: 5px;
+}
+.card-2 {
+    width: 600px;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.truck-card-img-top {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px
+}
+
+span.text-muted {
+    font-size: 12px
+}
+
+small.text-muted {
+    font-size: 8px
+}
+
+h5.mb-0 {
+    font-size: 1rem
+}
+
+small.ghj {
+    font-size: 9px
+}
+
+.mid {
+    background: #ECEDF1
+}
+
+h6.ml-1 {
+    font-size: 13px
+}
+
+small.key {
+    text-decoration: underline;
+    font-size: 9px;
+    cursor: pointer
+}
+
+.btn-danger {
+    color: #FFCBD2
+}
+
+.btn-danger:focus {
+    box-shadow: none
+}
+
+small.justify-content-center {
+    font-size: 9px;
+    cursor: pointer;
+    text-decoration: underline
+}
+
+/*==========================*/
+/*========= BANK =========*/
+/*==========================*/
+
+.bank-page .card-content:hover{
+    background-color: #dfdfdf;
+    cursor: pointer;
+}
+.width-600{
+    width: 570px !important;
+}
+.deposit-money{
+    display: block;
+    margin-bottom: 5px;
+    padding: 0px;
+}
+
+.deposit-money-btn{
+    display: block;
+    /* height: 30px; */
+    padding: 3px 12px !important;
+}
+
+/*===========================*/
+/*========= RECRUIT =========*/
+/*===========================*/
+
+.recruitment-page {
+	overflow: auto;
+}
+
+.card.user-card {
+    border-top: none;
+    -webkit-box-shadow: 0 0 1px 2px rgba(0,0,0,0.05), 0 -2px 1px -2px rgba(0,0,0,0.04), 0 0 0 -1px rgba(0,0,0,0.05);
+    box-shadow: 0 0 1px 2px rgba(0,0,0,0.05), 0 -2px 1px -2px rgba(0,0,0,0.04), 0 0 0 -1px rgba(0,0,0,0.05);
+    -webkit-transition: all 150ms linear;
+    transition: all 150ms linear;
+}
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.user-card .card-block {
+    text-align: center;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.user-card .card-block .user-image {
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 5px;
+    width: 110px;
+    height: 110px;
+}
+
+.user-card .card-block .user-image img {
+    z-index: 20;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+        width: 100px;
+    height: 100px;
+}
+
+.img-radius {
+    border-radius: 50%;
+}
+.img-width {
+    max-width: 50px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-t-25 {
+    margin-top: 25px;
+}
+
+.card .card-block p {
+    line-height: 1.4;
+}
+
+.text-muted {
+    color: #919aa3!important;
+    margin: 0px;
+}
+
+.user-card .card-block .activity-leval li.actived {
+    background-color: #2ed8b6;
+}
+
+.user-card .card-block .activity-leval li {
+    display: inline-block;
+    width: 14%;
+    height: 4px;
+    margin: 0 3px;
+    background-color: #ccc;
+}
+
+.user-card .card-block .counter-block {
+    color: #fff;
+}
+
+.user-card .card-block .user-social-link i {
+    font-size: 30px;
+}
+
+.user-card .card-block .user-image:before {
+    bottom: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.user-card .card-block .user-image:after, .user-card .card-block .user-image:before {
+    content: "";
+    width: 100%;
+    height: 48%;
+    border: 2px solid #4099ff;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+}
+
+.user-card .card-block .user-image:after {
+    top: 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.user-card .card-block .user-image:after, .user-card .card-block .user-image:before {
+    content: "";
+    width: 100%;
+    height: 48%;
+    border: 2px solid #4099ff;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+}
+
+/*=========================*/
+/*========= MODAL =========*/
+/*=========================*/
+
+.modal-confirm {		
+    color: #636363;
+    width: 400px;
+}
+.modal-confirm .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+}
+.modal-confirm .modal-header {
+    border-bottom: none;   
+    position: relative;
+}
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -10px;
+}
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -2px;
+}
+.modal-confirm .modal-body {
+    color: #999;
+}
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;		
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 10px 15px 25px;
+}
+.modal-confirm .modal-footer a {
+    color: #999;
+}		
+.modal-confirm .icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 9;
+    text-align: center;
+    border: 3px solid #f15e5e;
+}
+.modal-confirm .icon-box i {
+    color: #f15e5e;
+    font-size: 46px;
+    display: inline-block;
+    margin-top: 13px;
+}
+.modal-confirm .btn, .modal-confirm .btn:active {
+    color: #fff;
+    border-radius: 4px;
+    background: #60c7c1;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    min-width: 120px;
+    border: none;
+    min-height: 40px;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+.modal-confirm .btn-secondary {
+    background: #c1c1c1;
+}
+.modal-confirm .btn-secondary:hover, .modal-confirm .btn-secondary:focus {
+    background: #a8a8a8;
+}
+.modal-confirm .btn-danger {
+    background: #f15e5e;
+}
+.modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+    background: #ee3535;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}
+
+/*=============================*/
+/*========= SCROLLBAR =========*/
+/*=============================*/
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+[data-tooltip] {
+	position: relative;
+	z-index: 10;
+  }
+  
+  /* Positioning and visibility settings of the tooltip */
+  [data-tooltip]:before,
+  [data-tooltip]:after {
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	left: 50%;
+	bottom: calc(100% + 5px); /* 5px is the size of the arrow */
+	pointer-events: none;
+	transition: 0.2s;
+	will-change: transform;
+  }
+  
+  /* The actual tooltip with a dynamic width */
+  [data-tooltip]:before {
+	content: attr(data-tooltip);
+	padding: 10px 18px;
+	min-width: 50px;
+	max-width: 300px;
+	width: max-content;
+	width: -moz-max-content;
+	border-radius: 6px;
+	font-size: 14px;
+	background-color: rgba(59, 72, 80, 0.9);
+	background-image: linear-gradient(30deg,
+	  rgba(59, 72, 80, 0.44),
+	  rgba(59, 68, 75, 0.44),
+	  rgba(60, 82, 88, 0.44));
+	box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	text-align: center;
+	white-space: pre-wrap;
+	transform: translate(-50%, -5px) scale(0.5);
+  }
+  
+  /* Tooltip arrow */
+  [data-tooltip]:after {
+	content: '';
+	border-style: solid;
+	border-width: 5px 5px 0px 5px; /* CSS triangle */
+	border-color: rgba(55, 64, 70, 0.9) transparent transparent transparent;
+	transition-duration: 0s; /* If the mouse leaves the element, 
+								the transition effects for the 
+								tooltip arrow are "turned off" */
+	transform-origin: top;   /* Orientation setting for the
+								slide-down effect */
+	transform: translateX(-50%) scaleY(0);
+  }
+  
+  /* Tooltip becomes visible at hover */
+  [data-tooltip]:hover:before,
+  [data-tooltip]:hover:after {
+	visibility: visible;
+	opacity: 1;
+  }
+  /* Scales from 0.5 to 1 -> grow effect */
+  [data-tooltip]:hover:before {
+	transition-delay: 0.3s;
+	transform: translate(-50%, -5px) scale(1);
+  }
+  /* 
+	Arrow slide down effect only on mouseenter (NOT on mouseleave)
+  */
+  [data-tooltip]:hover:after {
+	transition-delay: 0.5s; /* Starting after the grow effect */
+	transition-duration: 0.2s;
+	transform: translateX(-50%) scaleY(1);
+  }
+  /*
+	That's it.
+  */
+  
+  
+  
+  
+  
+  
+  /*
+	If you want some adjustability
+	here are some orientation settings you can use:
+  */
+  
+  /* LEFT */
+  /* Tooltip + arrow */
+  [data-tooltip-location="left"]:before,
+  [data-tooltip-location="left"]:after {
+	left: auto;
+	right: calc(100% + 5px);
+	bottom: 50%;
+  }
+  
+  /* Tooltip */
+  [data-tooltip-location="left"]:before {
+	transform: translate(-5px, 50%) scale(0.5);
+  }
+  [data-tooltip-location="left"]:hover:before {
+	transform: translate(-5px, 50%) scale(1);
+  }
+  
+  /* Arrow */
+  [data-tooltip-location="left"]:after {
+	border-width: 5px 0px 5px 5px;
+	border-color: transparent transparent transparent rgba(55, 64, 70, 0.9);
+	transform-origin: left;
+	transform: translateY(50%) scaleX(0);
+  }
+  [data-tooltip-location="left"]:hover:after {
+	transform: translateY(50%) scaleX(1);
+  }
+  
+  
+  
+  /* RIGHT */
+  [data-tooltip-location="right"]:before,
+  [data-tooltip-location="right"]:after {
+	left: calc(100% + 5px);
+	bottom: 50%;
+  }
+  
+  [data-tooltip-location="right"]:before {
+	transform: translate(5px, 50%) scale(0.5);
+  }
+  [data-tooltip-location="right"]:hover:before {
+	transform: translate(5px, 50%) scale(1);
+  }
+  
+  [data-tooltip-location="right"]:after {
+	border-width: 5px 5px 5px 0px;
+	border-color: transparent rgba(55, 64, 70, 0.9) transparent transparent;
+	transform-origin: right;
+	transform: translateY(50%) scaleX(0);
+  }
+  [data-tooltip-location="right"]:hover:after {
+	transform: translateY(50%) scaleX(1);
+  }
+  
+  
+  
+  /* BOTTOM */
+  [data-tooltip-location="bottom"]:before,
+  [data-tooltip-location="bottom"]:after {
+	top: calc(100% + 5px);
+	bottom: auto;
+  }
+  
+  [data-tooltip-location="bottom"]:before {
+	transform: translate(-50%, 5px) scale(0.5);
+  }
+  [data-tooltip-location="bottom"]:hover:before {
+	transform: translate(-50%, 5px) scale(1);
+  }
+  
+  [data-tooltip-location="bottom"]:after {
+	border-width: 0px 5px 5px 5px;
+	border-color: transparent transparent rgba(55, 64, 70, 0.9) transparent;
+	transform-origin: bottom;
+  }
