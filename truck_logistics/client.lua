@@ -142,6 +142,7 @@ RegisterNUICallback('sellTruck', function(data, cb)
 			return
 		end
 		TriggerServerEvent('truck_logistics:sellTruck',data)
+			Wait(10000)
 		
 		SetTimeout(500,function()
 			cooldown = nil
@@ -187,6 +188,7 @@ RegisterNUICallback('withdrawMoney', function(data, cb)
 		cooldown = true
 		
 		TriggerServerEvent('truck_logistics:withdrawMoney')
+			Wait(10000)
 		
 		SetTimeout(500,function()
 			cooldown = nil
